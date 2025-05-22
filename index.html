@@ -5,6 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Harsha Kawadkar | Product Manager</title>
   <style>
+    .tile {
+  background-color: #f0f4ff;
+  border: 1px solid #dbe4ff;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.tile:hover {
+  background-color: #e6efff;
+}
+.tile h3 {
+  margin: 0;
+  font-size: 1.1em;
+}
+.details {
+  margin-top: 10px;
+  display: none;
+  color: #444;
+}
+
     body {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       margin: 0;
@@ -12,6 +34,13 @@
       background-color: #ffffff;
       color: #333333;
       line-height: 1.6;
+      <script>
+  function toggleDetails(id) {
+    const el = document.getElementById(id);
+    el.style.display = (el.style.display === "block") ? "none" : "block";
+  }
+</script>
+
     }
     header {
       padding: 60px 20px;
@@ -85,29 +114,38 @@
       <p>I am a people-centric Agile Coach and Product Manager with over 20 years in IT and 8+ years in Agile. I started my career as a VC++ and .NET developer, evolved into a Scrum Master, and now operate as a Product Manager driving digital transformation. I specialize in delivering high-value, user-centric products and empowering agile teams to achieve excellence.</p>
     </section>
 
-    <section id="portfolio">
-      <h2>Product & Project Highlights</h2>
+ <section id="portfolio">
+  <h2>Product & Project Highlights</h2>
 
-      <div class="project">
-        <h3>Authentication Security Projects @ TD Bank</h3>
-        <p>Led multiple enterprise-level authentication initiatives under the Enterprise Protect domain. Drove Agile delivery using both TD Agile and SAFE frameworks. Contributed to pre-PI planning and led backlog schema design in Jira.</p>
-      </div>
+  <div class="tile" onclick="toggleDetails('td')">
+    <h3>Authentication Security Projects @ TD Bank</h3>
+    <div class="details" id="td">
+      <p>Led multiple enterprise-level authentication initiatives under the Enterprise Protect domain. Drove Agile delivery using both TD Agile and SAFE frameworks. Contributed to pre-PI planning and led backlog schema design in Jira.</p>
+    </div>
+  </div>
 
-      <div class="project">
-        <h3>OpenAM SSO Migration @ Scotiabank</h3>
-        <p>Oversaw migration of 80+ applications from OpenSSO to OpenAM for Scotiabank. Used Jenkins pipelines for CI/CD. Managed cross-functional teams and stakeholder engagement throughout the DevOps cycle.</p>
-      </div>
+  <div class="tile" onclick="toggleDetails('openam')">
+    <h3>OpenAM SSO Migration @ Scotiabank</h3>
+    <div class="details" id="openam">
+      <p>Oversaw migration of 80+ applications from OpenSSO to OpenAM for Scotiabank. Used Jenkins pipelines for CI/CD. Managed cross-functional teams and stakeholder engagement throughout the DevOps cycle.</p>
+    </div>
+  </div>
 
-      <div class="project">
-        <h3>Workflow Automation Using PEGA</h3>
-        <p>Built multiple PEGA-based case management solutions including Outstanding Fund Transfers, Document Workflow, and OPCC-CMS. Helped modernize legacy processes with agile-first delivery models.</p>
-      </div>
+  <div class="tile" onclick="toggleDetails('pega')">
+    <h3>Workflow Automation Using PEGA</h3>
+    <div class="details" id="pega">
+      <p>Built multiple PEGA-based case management solutions including Outstanding Fund Transfers, Document Workflow, and OPCC-CMS. Helped modernize legacy processes with agile-first delivery models.</p>
+    </div>
+  </div>
 
-      <div class="project">
-        <h3>Mortgage Ecosystem Knowledge Platform</h3>
-        <p>Led development of a knowledge platform for mortgage application mapping. Used ArchiMate to document functional dependencies across Scotiabank’s lending ecosystem.</p>
-      </div>
-    </section>
+  <div class="tile" onclick="toggleDetails('mortgage')">
+    <h3>Mortgage Ecosystem Knowledge Platform</h3>
+    <div class="details" id="mortgage">
+      <p>Led development of a knowledge platform for mortgage application mapping. Used ArchiMate to document functional dependencies across Scotiabank’s lending ecosystem.</p>
+    </div>
+  </div>
+</section>
+
 
     <section id="experience">
       <h2>Career Journey</h2>
